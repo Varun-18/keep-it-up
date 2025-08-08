@@ -1,13 +1,14 @@
 {
+  "version": 2,
   "functions": {
     "api/keep-alive.js": {
-      "maxDuration": 60
+      "maxDuration": 10
     }
   },
-  "crons": [
+  "routes": [
     {
-      "path": "/api/keep-alive",
-      "schedule": "*/10 * * * *"
+      "src": "/keep-alive",
+      "dest": "/api/keep-alive.js"
     }
   ]
 }
