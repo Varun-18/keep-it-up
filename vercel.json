@@ -1,14 +1,1 @@
-{
-  "version": 2,
-  "functions": {
-    "api/keep-alive.js": {
-      "maxDuration": 10
-    }
-  },
-  "routes": [
-    {
-      "src": "/keep-alive",
-      "dest": "/api/keep-alive.js"
-    }
-  ]
-}
+{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/api" }] }
