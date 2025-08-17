@@ -4,9 +4,11 @@ const dotenv = require("dotenv")
 
 dotenv.config()
 
-const BACKEND_URL = process.env.BACKEND_URL ?? "https://your-backend-api.com/endpoint";
+const BACKEND_URL = "https://adda247-0u72.onrender.com/health";
+console.warn("🚀 ~ BACKEND_URL:", BACKEND_URL)
 
 async function hitBackend() {
+    console.warn("🚀 ~ hitBackend : triggered")
     try {
         const response = await fetch(BACKEND_URL);
         console.log('Backend hit:', response.status);
@@ -79,8 +81,8 @@ app.get("/", (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log("Server ready on port 3000.");
-    setInterval(hitBackend, 60 * 1000);
+    console.warn("Server ready on port 3000.");
+    setInterval(hitBackend, 1000);
 });
 
 module.exports = app;
